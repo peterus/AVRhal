@@ -1,0 +1,327 @@
+start SDCard_Init
+SPI_Init
+Passt!
+
+CID:
+MID:      3
+OID:      SD
+PNM:      SU01G
+ProdRev.: 128
+PSN:      2021815840
+MDT:      1712
+CRC:      51
+
+MBR Signature found!
+BootSignatur:  -21931
+
+Status:        0
+CHSFirst:
+PartitionType: 6
+CHSLast:       ▒?z
+StartSector:   63
+NumSectors:    1975932
+volume_boot_record_addr[0]: 0x3f
+VBR Signature found for Partition: 0!
+
+Status:        0
+CHSFirst:
+PartitionType: 6
+CHSLast:       ▒?z
+StartSector:   63
+NumSectors:    1975932
+volume_boot_record_addr[0]: 0x3f
+VBR Signature found for Partition: 0!
+
+Status:        0
+CHSFirst:
+PartitionType: 0
+CHSLast:
+StartSector:   0
+NumSectors:    0
+volume_boot_record_addr[1]: 0x0
+VBR Signature NOT found for Partition: 1!
+
+Status:        0
+CHSFirst:
+PartitionType: 0
+CHSLast:
+StartSector:   0
+NumSectors:    0
+volume_boot_record_addr[2]: 0x0
+VBR Signature NOT found for Partition: 2!
+
+Status:        0
+CHSFirst:
+PartitionType: 0
+CHSLast:
+StartSector:   0
+NumSectors:    0
+volume_boot_record_addr[3]: 0x0
+VBR Signature NOT found for Partition: 3!
+
+MBR:
+Partition[0].bootable:      0
+Partition[0].PartitionType: 6
+Partition[0].StartSector:   63
+Partition[0].NumSectors:    1975932
+
+VBR[0]:
+BS_jmpBoot:      0xEB3C90
+BS_OEMName:      MSDOS5.0
+BPB_BytesPerSec: 512
+BPB_SecPerClus:  32
+BPB_RsvdSecCnt:  1
+BPB_NumFATs:     2
+BPB_RootEntCnt:  512
+BPB_TotSec16:    0
+BPB_Media:       248
+BPB_FATSz16:     242
+BPB_SecPerTrk:   63
+BPB_NumHeads:    255
+BPB_HiddSec:     63
+BPB_TotSec32:    1975932
+
+
+Part0_Addr: 548
+
+FAT: VOLUME_LABEL
+FAT_Read_Dir_Entry: 0, 0:
+VOLUME LABEL: HALLO
+
+FAT: ENTRY_IS_FREE
+FAT_Read_Dir_Entry: 0, 1:
+FREE ENTRY
+
+FAT: ENTRY_IS_FREE
+FAT_Read_Dir_Entry: 0, 2:
+FREE ENTRY
+
+FAT: ENTRY_IS_FREE
+FAT_Read_Dir_Entry: 0, 3:
+FREE ENTRY
+
+FAT: IS A FILE
+FAT_Read_Dir_Entry: 0, 4:
+DIR_Name:              ABC
+DIR_Ending:            TXT
+DIR_Attribute:         0x20
+DIR_Create_TimeTenth:  152
+DIR_Create_Time:       -21035
+DIR_Create_Date:       17992
+DIR_LastAccess_Date:   17992
+DIR_FirstCluster_High: 0x0
+DIR_LastChange_Time:   -19466
+DIR_LastChange_Date:   17992
+DIR_FirstCluster_Low:  0x3
+DIR_Size:              16
+
+FAT: ENTRY_IS_FREE
+FAT_Read_Dir_Entry: 0, 5:
+FREE ENTRY
+
+FAT: ENTRY_IS_FREE
+FAT_Read_Dir_Entry: 0, 6:
+FREE ENTRY
+
+FAT: ENTRY_IS_FREE
+FAT_Read_Dir_Entry: 0, 7:
+FREE ENTRY
+
+FAT: IS A FILE
+FAT_Read_Dir_Entry: 0, 8:
+DIR_Name:              DEF
+DIR_Ending:            TXT
+DIR_Attribute:         0x20
+DIR_Create_TimeTenth:  152
+DIR_Create_Time:       -21035
+DIR_Create_Date:       17992
+DIR_LastAccess_Date:   17992
+DIR_FirstCluster_High: 0x0
+DIR_LastChange_Time:   -21031
+DIR_LastChange_Date:   17992
+DIR_FirstCluster_Low:  0x0
+DIR_Size:              0
+
+FAT: ENTRY_IS_FREE
+FAT_Read_Dir_Entry: 0, 9:
+FREE ENTRY
+
+FAT: ENTRY_IS_FREE
+FAT_Read_Dir_Entry: 0, 10:
+FREE ENTRY
+
+FAT: SUBDIR
+FAT_Read_Dir_Entry: 0, 11:
+SUBDIR
+DIR_Name:              ORDNER
+DIR_Ending:
+DIR_Attribute:         0x10
+DIR_Create_TimeTenth:  45
+DIR_Create_Time:       -19675
+DIR_Create_Date:       17992
+DIR_LastAccess_Date:   17992
+DIR_FirstCluster_High: 0x0
+DIR_LastChange_Time:   -19674
+DIR_LastChange_Date:   17992
+DIR_FirstCluster_Low:  0x2
+DIR_Size:              0
+
+FAT: IS A FILE
+FAT_Read_Dir_Entry: 0, 12:
+DIR_Name:              TEST
+DIR_Ending:            TXT
+DIR_Attribute:         0x20
+DIR_Create_TimeTenth:  53
+DIR_Create_Time:       -16870
+DIR_Create_Date:       17992
+DIR_LastAccess_Date:   17992
+DIR_FirstCluster_High: 0x0
+DIR_LastChange_Time:   -16909
+DIR_LastChange_Date:   17992
+DIR_FirstCluster_Low:  0x5
+DIR_Size:              1024
+
+FAT: LAST_ENTRY!
+FAT_Read_Dir_Entry: 0, 13:
+LAST ENTRY
+
+FAT_Load: Block found
+FAT: SUBDIR
+FAT_Read_Dir_Entry: 2, 0:
+SUBDIR
+DIR_Name:              .
+DIR_Ending:
+DIR_Attribute:         0x10
+DIR_Create_TimeTenth:  45
+DIR_Create_Time:       -19675
+DIR_Create_Date:       17992
+DIR_LastAccess_Date:   17992
+DIR_FirstCluster_High: 0x0
+DIR_LastChange_Time:   -19674
+DIR_LastChange_Date:   17992
+DIR_FirstCluster_Low:  0x2
+DIR_Size:              0
+
+FAT_Load: Block found
+FAT: SUBDIR
+FAT_Read_Dir_Entry: 2, 1:
+SUBDIR
+DIR_Name:              ..
+DIR_Ending:
+DIR_Attribute:         0x10
+DIR_Create_TimeTenth:  45
+DIR_Create_Time:       -19675
+DIR_Create_Date:       17992
+DIR_LastAccess_Date:   17992
+DIR_FirstCluster_High: 0x0
+DIR_LastChange_Time:   -19674
+DIR_LastChange_Date:   17992
+DIR_FirstCluster_Low:  0x0
+DIR_Size:              0
+
+FAT_Load: Block found
+FAT: ENTRY_IS_FREE
+FAT_Read_Dir_Entry: 2, 2:
+FREE ENTRY
+
+FAT_Load: Block found
+FAT: ENTRY_IS_FREE
+FAT_Read_Dir_Entry: 2, 3:
+FREE ENTRY
+
+FAT_Load: Block found
+FAT: ENTRY_IS_FREE
+FAT_Read_Dir_Entry: 2, 4:
+FREE ENTRY
+
+FAT_Load: Block found
+FAT: IS A FILE
+FAT_Read_Dir_Entry: 2, 5:
+DIR_Name:              XYZ
+DIR_Ending:            TXT
+DIR_Attribute:         0x20
+DIR_Create_TimeTenth:  46
+DIR_Create_Time:       -17566
+DIR_Create_Date:       17992
+DIR_LastAccess_Date:   17992
+DIR_FirstCluster_High: 0x0
+DIR_LastChange_Time:   -17559
+DIR_LastChange_Date:   17992
+DIR_FirstCluster_Low:  0x4
+DIR_Size:              14
+
+FAT_Load: Block found
+FAT: LAST_ENTRY!
+FAT_Read_Dir_Entry: 2, 6:
+LAST ENTRY
+
+FAT_Read_File: Block: 0
+FAT_Load: Block found
+FAT_Read_File: Block: 612
+file_buffer[0]: 65 A
+file_buffer[1]: 66 B
+file_buffer[2]: 67 C
+file_buffer[3]: 13
+file_buffer[4]: 10
+
+file_buffer[5]: 97 a
+file_buffer[6]: 98 b
+file_buffer[7]: 99 c
+file_buffer[8]: 13
+file_buffer[9]: 10
+
+file_buffer[10]: 104 h
+file_buffer[11]: 105 i
+file_buffer[12]: 104 h
+file_buffer[13]: 105 i
+file_buffer[14]: 13
+file_buffer[15]: 10
+
+file_buffer[16]: 0
+file_buffer[17]: 0
+file_buffer[18]: 0
+file_buffer[19]: 0
+FAT_Read_File: Block: 0
+FAT_Load: Block found
+FAT_Read_File: Block: 644
+file_buffer[0]: 120 x
+file_buffer[1]: 121 y
+file_buffer[2]: 122 z
+file_buffer[3]: 13
+file_buffer[4]: 10
+
+file_buffer[5]: 88 X
+file_buffer[6]: 89 Y
+file_buffer[7]: 90 Z
+file_buffer[8]: 13
+file_buffer[9]: 10
+
+file_buffer[10]: 72 H
+file_buffer[11]: 73 I
+file_buffer[12]: 72 H
+file_buffer[13]: 73 I
+file_buffer[14]: 0
+file_buffer[15]: 0
+file_buffer[16]: 0
+file_buffer[17]: 0
+file_buffer[18]: 0
+file_buffer[19]: 0
+FAT_Read_File: Block: 0
+FAT_Load: Block found
+FAT_Read_File: Block: 676
+dummy text dummy text dummy text dummy text dummy text dummy text dummy text
+dummy text dummy text dummy text dummy text dummy text dummy text dummy text
+dummy text dummy text dummy text dummy text dummy text dummy text dummy text
+dummy text dummy text dummy text dummy text dummy text dummy text dummy text
+dummy text dummy text dummy text dummy text dummy text dummy text dummy text
+dummy text dummy text dummy text dummy text dummy text dummy text dummy text
+dummy text dummy text dummy text dummyFAT_Read_File: Block: 0
+FAT_Load: Block found
+FAT_Read_File: Block: 677
+ text dummy text dummy text dummy text
+dummy text dummy text dummy text dummy text dummy text dummy text dummy text
+dummy text dummy text dummy text dummy text dummy text dummy text dummy text
+dummy text dummy text dummy text dummy text dummy text dummy text dummy text
+dummy text dummy text dummy text dummy text dummy text dummy text dummy text
+dummy text dummy text dummy text dummy text dummy text dummy text dummy text
+dummy text dummy text dummy text dummy text dummy text dummy text dummy text
