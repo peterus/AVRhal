@@ -3,8 +3,7 @@
  *
  * Created: 30.08.2014 17:27:23
  *  Author: Peter Buchegger
- */ 
-
+ */
 
 #ifndef I2C_H_
 #define I2C_H_
