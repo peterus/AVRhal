@@ -92,6 +92,8 @@ else(COMPILE_AVR)
 	add_subdirectory(linux)
 endif(COMPILE_AVR)
 add_subdirectory(driver)
-add_subdirectory(tests)
+IF(${CMAKE_PROJECT_NAME} STREQUAL AVRhal)
+	add_subdirectory(tests)
+ENDIF()
 
 
