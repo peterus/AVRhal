@@ -64,15 +64,19 @@ void LCD_Init(void)
 	LCD_Init_Inner();
 }
 
-void LCD_PutS(char * str)
+void LCD_Activate(void)
 {
-	
+	LCD_CS_PORT &= ~(1 << LCD_CS_PIN);
 }
 
+void LCD_Deactivate(void)
+{
+	LCD_CS_PORT |= (1 << LCD_CS_PIN);
+}
 
 void LCD_Init_Inner(void)
 {
-	LCD_CS_PORT &= ~(1 << LCD_CS_PIN);
+	LCD_Activate();
 	LCD_Write_Register_Data(0x0000, 0x0001);
 	LCD_Write_Register_Data(0x0003, 0xA8A4);
 	LCD_Write_Register_Data(0x000C, 0x0000);
@@ -115,7 +119,7 @@ void LCD_Init_Inner(void)
 	LCD_Write_Register_Data(0x004f, 0x0000);
 	LCD_Write_Register_Data(0x004e, 0x0000);
 	LCD_Write_Register(0x0022);
-	LCD_CS_PORT |= (1 << LCD_CS_PIN);
+	LCD_Deactivate();
 }
 
 void LCD_Write_Bus(uint16_t data)
@@ -154,18 +158,41 @@ void LCD_Set_Address(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)
 	LCD_Write_Register(0x0022);
 }
 
-void Paint(uint16_t data)
+void LCD_Set_Pixel(LCD_Color color, int16_t x, int16_t y)
+{
+	if(x < 0 || y < 0 || x >= MAX_X || y >= MAX_Y)
+	{
+		return;
+	}
+	LCD_Set_Address(x, y, x, y);
+	LCD_Write_Data(color.data);
+}
+
+void Paint(LCD_Color color)
 {
 	int i, j;
-	LCD_CS_PORT &= ~(1 << LCD_CS_PIN);
-	LCD_Set_Address(0,0,239,319);
+	LCD_Activate();
+	LCD_Set_Address(0, 0, 239, 319);
 	for(i = 0; i < 320; i++)
 	{
 		for (j = 0; j < 240; j++)
 		{
-			LCD_Write_Data(data);
+			LCD_Write_Data(color.data);
 		}
 	}
-	LCD_CS_PORT |= (1 << LCD_CS_PIN);
+	LCD_Deactivate();
+}
+
+void Paint_field(LCD_Color color, int16_t x1, int16_t y1, int16_t x2, int16_t y2)
+{
+	int i, j;
+	LCD_Set_Address(x1, y1, x2, y2);
+	for(i = y1; i < y2; i++)
+	{
+		for (j = x1; j < x2; j++)
+		{
+			LCD_Write_Data(color.data);
+		}
+	}
 }
 
