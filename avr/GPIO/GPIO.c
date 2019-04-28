@@ -8,7 +8,7 @@
 
 #include "GPIO/GPIO.h"
 
-gpio_t gpio[8][8] =
+gpio_t gpio[ePORT_MAX][8] =
 {
 	[ePORTA] = {
 		{ .ddr = &DDRA, .port = &PORTA, .pin = 0 },
@@ -91,4 +91,44 @@ void deactivate_pullup(gpio_t * gpio)
 uint8_t get_status(gpio_t * gpio)
 {
 	return (((*gpio->port)) & (1 << gpio->pin));
+}
+
+
+void set_output_map(gpio_map_t * map)
+{
+	for(uint8_t i = 0; i < map->size; i++)
+	{
+		set_output(map->gpio[i]);
+	}
+}
+
+void set_pins_map(gpio_map_t * map, uint32_t data)
+{
+	for(uint8_t i = 0; i < map->size; i++)
+	{
+		if(data & 0x01)
+			set_high(map->gpio[i]);
+		else
+			set_low(map->gpio[i]);
+		data = data >> 1;
+	}
+}
+
+void set_input_map(gpio_map_t * map)
+{
+	for(uint8_t i = 0; i < map->size; i++)
+	{
+		set_input(map->gpio[i]);
+	}
+}
+
+uint32_t get_status_map(gpio_map_t * map)
+{
+	uint32_t data = 0;
+	for(uint8_t i = 0; i < map->size; i++)
+	{
+		data = get_status(map->gpio[i]);
+		data = data << 1;
+	}
+	return data;
 }

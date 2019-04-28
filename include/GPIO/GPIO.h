@@ -26,10 +26,13 @@ enum port_t
 	ePORTE,
 	ePORTF,
 	ePORTG,
+	ePORTH,
+	ePORTK,
 	ePORTL,
+	ePORT_MAX,
 };
 
-extern gpio_t gpio[8][8];
+extern gpio_t gpio[ePORT_MAX][8];
 
 void set_output(gpio_t * gpio);
 void set_high(gpio_t * gpio);
@@ -40,5 +43,17 @@ void set_input(gpio_t * gpio);
 void activate_pullup(gpio_t * gpio);
 void deactivate_pullup(gpio_t * gpio);
 uint8_t get_status(gpio_t * gpio);
+
+typedef struct
+{
+	const uint8_t size;
+	gpio_t * gpio[];
+} gpio_map_t;
+
+void set_output_map(gpio_map_t * map);
+void set_pins_map(gpio_map_t * map, uint32_t data);
+
+void set_input_map(gpio_map_t * map);
+uint32_t get_status_map(gpio_map_t * map);
 
 #endif /* GPIO_H_ */
