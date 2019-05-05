@@ -14,6 +14,7 @@ typedef struct
 {
 	volatile uint8_t * ddr;
 	volatile uint8_t * port;
+	volatile uint8_t * pin_;
 	uint8_t pin;
 } gpio_t;
 
@@ -46,7 +47,7 @@ uint8_t get_status(gpio_t * gpio);
 
 typedef struct
 {
-	const uint8_t size;
+	uint8_t size;
 	gpio_t * gpio[];
 } gpio_map_t;
 
