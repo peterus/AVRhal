@@ -486,6 +486,23 @@ int UART_PutC_(char data, FILE * stream)
 	return 0;
 }
 
+void UART_PutByte(unsigned char data)
+{
+    unsigned char tmphead;
+    
+    tmphead  = (UART_TxHead + 1) & UART_TX_BUFFER_MASK;
+    
+    while ( tmphead == UART_TxTail ){
+        ;/* wait for free space in buffer */
+    }
+    
+    UART_TxBuf[tmphead] = data;
+    UART_TxHead = tmphead;
+
+    /* enable UDRE interrupt */
+    UART0_CONTROL    |= _BV(UART0_UDRIE);
+}
+
 
 /*************************************************************************
 Function: uart_puts()
